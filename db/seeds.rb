@@ -13,9 +13,9 @@ p4 = User.create(first_name: 'Vince', last_name: 'Abbott')
 p5 = User.create(first_name: 'Jared', last_name: 'Abbrederis')
 p6 = User.create(first_name: 'Duke', last_name: 'Abbruzzi')
 
-t1 = Team.create(name: 'Raging Crusaders', players: [p1,p2])
-t2 = Team.create(name: 'Pride', players: [p3])
-t3 = Team.create(name: 'Privateers', players: [p4])
+t1 = Team.create(name: 'Raging Crusaders', users: [p1,p2])
+t2 = Team.create(name: 'Pride', users: [p3])
+t3 = Team.create(name: 'Privateers', users: [p4])
 
  
 g1 = Game.new(winner: t1, loser: t2, score: 4)

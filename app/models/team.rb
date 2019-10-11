@@ -1,4 +1,4 @@
-class Team < AllicationRecord
+class Team < ApplicationRecord
   has_and_belongs_to_many :matches
   has_many :users
   has_many :winner_games, :class_name => 'Game', :foreign_key => 'winner_id'

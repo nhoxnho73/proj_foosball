@@ -17,26 +17,26 @@ ActiveRecord::Schema.define(version: 2019_10_11_030909) do
 
   create_table "games", force: :cascade do |t|
     t.integer "score"
-    t.bigint "match_id"
-    t.bigint "winner_id"
-    t.bigint "loser_id"
+    t.integer "match_id"
+    t.integer "winner_id"
+    t.integer "loser_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["loser_id"], name: "index_games_on_loser_id"
-    t.index ["match_id"], name: "index_games_on_match_id"
-    t.index ["winner_id"], name: "index_games_on_winner_id"
+    t.index ["loser_id"], name: "index_games_on_loser_id", using: :btree
+    t.index ["match_id"], name: "index_games_on_match_id", using: :btree
+    t.index ["winner_id"], name: "index_games_on_winner_id", using: :btree
   end
 
   create_table "matches", force: :cascade do |t|
-    t.bigint "winner_id"
+    t.integer "winner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["winner_id"], name: "index_matches_on_winner_id"
+    t.index ["winner_id"], name: "index_matches_on_winner_id", using: :btree
   end
 
   create_table "matches_teams", id: false, force: :cascade do |t|
-    t.bigint "team_id", null: false
-    t.bigint "match_id", null: false
+    t.integer "team_id", null: false
+    t.integer "match_id", null: false
   end
 
   create_table "teams", force: :cascade do |t|
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 2019_10_11_030909) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.bigint "team_id"
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id"], name: "index_users_on_team_id"
+    t.index ["team_id"], name: "index_users_on_team_id", using: :btree
   end
 
   add_foreign_key "games", "matches"

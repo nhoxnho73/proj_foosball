@@ -38,6 +38,7 @@ gem 'devise'
 gem 'faker'
 gem 'haml-rails'
 gem 'ransack'
+gem 'jbuilder', '~> 2.5'
 gem 'pagy'
 gem "rack-mini-profiler",  require: false
 gem 'attach', '~> 1.0.1' #upload file
@@ -45,6 +46,8 @@ gem 'pry-rails'
 gem 'pry-doc'
 gem 'pry-stack_explorer'
 gem 'uglifier', '>= 1.3.0'
+gem 'adminlte2-rails'
+gem 'bootstrap-sass'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

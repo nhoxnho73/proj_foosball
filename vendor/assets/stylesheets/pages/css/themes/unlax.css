@@ -8975,7 +8975,7 @@ div.cs-skin-slide .cs-options ul li.cs-selected span {
 ------------------------------------
 */
 .table.dataTable.no-footer {
-  border: none;
+  border:  1px solid #ddd;
 }
 .dataTables_scroll:hover .dataTables_scrollBody:before {
   content: "";

@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require plugins/jquery/jquery-3.2.1.min
+//= require jquery
 //= require jquery_ujs
 //= require plugins/modernizr.custom
 //= require plugins/jquery-ui/jquery-ui.min
@@ -34,6 +35,23 @@
 //= require plugins/chartjs/chartjs.min
 //= require pages/js/pages
 //= require pages/core/js/scripts
+//= require chart
+//= require jquery.slimscroll.min
+//= require jquery.dataTables.min
+//= require dataTables.bootstrap.min
 
 
 //= require_tree .
+
+$(document).ready(function(e) {
+  // data table
+  var default_number_column_sotring = $("#default_number_column_sotring").attr('data-number');
+  if (typeof(default_number_column_sotring) == "undefined"){
+    default_number_column_sotring = 0;
+  }
+
+  $('.adminlte2datatable').DataTable();
+
+  //hide and unbind icon sort in table
+  $(".remove-icon-sorting").removeClass('sorting_desc').removeClass('sorting').unbind();
+});
