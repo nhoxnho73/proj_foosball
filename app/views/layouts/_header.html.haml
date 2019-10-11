@@ -1,0 +1,13 @@
+.header
+  %a.btn-link.toggle-sidebar.d-lg-none.pg.pg-menu{"data-toggle" => "sidebar", :href => "#"}
+  %div
+    .brand.inline
+      %p.nav-header-logo Fantasy Foosball
+  .d-flex.align-items-center
+    .pull-left.p-r-10.fs-14.font-heading.d-lg-block.d-none
+      %span.semi-bold 
+        Le Thanh Phong
+    .dropdown.pull-right.d-lg-block.d-none
+      %button.profile-dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+        %span.thumbnail-wrapper.d32.circular.inline
+          %canvas.user-avatar{width: '32', height: '32', id: "user", 'data-name': 'Le Thanh Phong', 'data-email': 'mail'}

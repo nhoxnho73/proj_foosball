@@ -1,0 +1,64 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "no-preview", :name => "turbolinks-cache-control" }/
+    %title Fantasy Foosball Management System
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no", :name => "viewport"}/
+    %link{:href => "pages/ico/60.png", :rel => "apple-touch-icon"}/
+    %link{:href => "pages/ico/76.png", :rel => "apple-touch-icon", :sizes => "76x76"}/
+    %link{:href => "pages/ico/120.png", :rel => "apple-touch-icon", :sizes => "120x120"}/
+    %link{:href => "pages/ico/152.png", :rel => "apple-touch-icon", :sizes => "152x152"}/
+    %link{:href => "favicon.ico", :rel => "icon", :type => "image/x-icon"}/
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "yes", :name => "apple-touch-fullscreen"}/
+    %meta{:content => "default", :name => "apple-mobile-web-app-status-bar-style"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body.fixed-header
+    %nav.page-sidebar{"data-pages" => "sidebar"}
+      .sidebar-header
+        %div{:style => "display: inline-block;width: 78px;"}
+          %p{:style => "font-size: 30px;font-weight: bolder;margin-top: auto;margin-bottom: auto;margin: 0;position: absolute;top: 50%;transform: translate(0, -50%);"}
+            FB
+        .sidebar-header-controls
+          %button.btn.btn-xs.sidebar-slide-toggle.btn-link.m-l-20{"data-pages-toggle" => "#appMenu", :type => "button"}
+            %i.fa.fa-angle-down.fs-16
+          %button.btn.btn-link.d-lg-inline-block.d-xlg-inline-block.d-md-inline-block.d-sm-none.d-none{"data-toggle-pin" => "sidebar", :type => "button"}
+            %i.fa.fs-12
+      = render 'layouts/sidebar'
+    .page-container
+      = render 'layouts/header'
+      .page-content-wrapper
+        .content
+          .jumbotron{"data-pages" => "parallax"}
+            .container-fluid.container-fixed-lg.sm-p-l-0.sm-p-r-0
+
+          .container-fluid.container-fixed-lg.sm-p-l-0.sm-p-r-0
+            - if notice.present?
+              .alert.alert-success.alert-dismissable.animation-fadeInQuick
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+                %ul
+                  - if notice.kind_of?(Array)
+                    - notice.each do |msg|
+                      %li #{msg}
+                  - else
+                    %li #{notice}
+            - if alert.present?
+              .alert.alert-danger.alert-dismissable.animation-fadeInQuick
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+                %ul
+                  - if alert.kind_of?(Array)
+                    - alert.each do |msg|
+                      %li #{msg}
+                  - else
+                    %li #{alert}
+
+            = yield
+        = render 'layouts/footer'

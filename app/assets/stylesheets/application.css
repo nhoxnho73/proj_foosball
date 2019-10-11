@@ -12,4 +12,21 @@
  *
  *= require_tree .
  *= require_self
+  *= require plugins/bootstrap/css/bootstrap.min
+ *= require plugins/bootstrap-daterangepicker/daterangepicker-bs3
+ *= require plugins/bootstrap-datepicker/css/datepicker3
+ *= require plugins/font-awesome/css/font-awesome.min
+ *= require plugins/jquery-scrollbar/jquery.scrollbar
+ *= require plugins/select2/css/select2.min
+ *= require plugins/switchery/css/switchery.min
+ *= require plugins/animate.min
+ *= require pages/css/pages-icons
+ *= require pages/css/pages
  */
+
+ .nav-header-logo {
+  font-size: 30px;
+  font-weight: bolder;
+  padding-top: 5px;
+  color: black;
+}
