@@ -1,0 +1,47 @@
+%section.content-header
+  %h1 Matches
+%section.content
+  .row
+    .col-xs-12
+      .box
+        .box-header.with-border
+          %a.btn.btn-md.btn-primary.pull-right{:href => new_match_path} New
+        .box-body
+          - attrs = [:id, :teams]
+          #adminlte2datatable_wrapper.dataTables_wrapper.form-inline.dt-bootstrap
+            .row
+              .col-sm-12
+                %table.adminlte2datatable.table.table-bordered.table-striped.dataTable{"aria-describedby" => "adminlte2datatable_info", :role => "grid"}
+                  %thead
+                    %tr
+                      %th
+                      %th
+                      %th{:colspan => "2"} Game 1
+                      %th{:colspan => "2"} Game 2
+                      %th{:colspan => "2"} Game 3
+                      %th
+                    %tr{:role => "row"}
+                      - attrs.each_with_index do |attr, index|
+                        %th.sorting_asc{"aria-controls" => "adminlte2datatable", :colspan => "1", :rowspan => "1", :tabindex => index}= t(attr)
+                      - 3.times do
+                        %th Winner
+                        %th Score
+                      %th WINNER
+                  %tbody
+                    - if @matches.blank?
+                      %tr
+                        %td{:colspan => attrs.count}
+                    -else
+                      - @matches.each do |match|
+                        %tr{:role => 'row'}
+                          - attrs.each do |attr|
+                            - case attr
+                            - when :teams
+                              %td= match.teams.pluck(:name).join(' - ')
+                            - else
+                              %td= match[attr]
+                          - games = match.games
+                          - (0..2).each do |index|
+                            %td= games[index].try(:winner).try(:name)
+                            %td= games[index].try(:score)
+                          %td= match.winner.try(:name) || 'N/A'

@@ -1,0 +1,12 @@
+%section.content-header
+  %h1 Users
+%section.content
+  .box.box-primary
+    .box-header.with-border
+      %h3.box-title Edit
+    %form.form-horizontal{:action => user_path(@user.id), :enctype =>"multipart/form-data", :method => "post"}
+      %input{:type => "hidden", :name => "_method", :value => "put"}
+      = render :partial => 'users/form'
+      .box-footer
+        %button.btn.btn-primary.pull-right{:type => 'submit'} Update
+        = link_to('Delete', user_path, :method => :delete, "data-confirm" => "Are you sure to remove this?", class: 'btn btn-danger pull-left')

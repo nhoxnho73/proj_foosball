@@ -1,0 +1,18 @@
+= hidden_field_tag :authenticity_token, form_authenticity_token
+.box-body
+  %error-popout
+  .col-md-8
+    .form-group
+      %label.col-md-3.control-label Name *
+      .col-md-9
+        %input.form-control{:type => "text", :name => "team[name]", :placeholder => "...", :value => @team.name, :required => ''}
+    - available_users = User.where(team: nil)
+    - users = @team.users
+    - (0..1).each do |index|
+      .form-group
+        %label.col-md-3.control-label User (optional)
+        .col-md-9
+          %select.form-control{:name => 'user_id[]'}
+            %option{:value => ''} N/A
+            - available_users.each do |avai_user|
+              %option{:value => avai_user.id, :selected => users[index].try(:user_id) == avai_user.id ? '' : false}= "#{avai_user.first_name} #{avai_user.last_name}"

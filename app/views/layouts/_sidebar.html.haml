@@ -2,27 +2,28 @@
   / BEGIN SIDEBAR MENU ITEMS
   %ul.menu-items
     %li.m-t-30
-      %span.title Dashboard
+      = link_to :ranking, class: 'detailed' do
+        %span.title Dashboard
       %span.bg-success.icon-thumbnail
         %i.pg-home
       %li
         %a{:href => "javascript:;"}
-          %span.title Fantasy Foosball Manage
+          %span.title Manage Detail
           %span.arrow
         %span.icon-thumbnail
           %i.fa-key.fa
         %ul.sub-menu
           %li
-            Loại kỳ
-          %span.icon-thumbnail LK
+            = link_to :users, class: 'users' do
+              Create Users
+            %span.icon-thumbnail 01
           %li
-            Role
-          %span.icon-thumbnail LK
+            = link_to :teams, class: 'teams' do
+              Create Teams
+            %span.icon-thumbnail 02
           %li
-            Nhóm
-          %span.icon-thumbnail N
-          %li
-            Trạng thái book
-          %span.icon-thumbnail BS
+            = link_to :matches, class: 'matches' do
+              Create Matches
+            %span.icon-thumbnail 02
 
   .clearfix

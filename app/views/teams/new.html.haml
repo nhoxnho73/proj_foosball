@@ -1,0 +1,10 @@
+%section.content-header
+  %h1 Teams
+%section.content
+  .box.box-primary
+    .box-header.with-border
+      %h3.box-title New
+    %form.form-horizontal{:action => teams_path, :enctype =>"multipart/form-data", :method => "post"}
+      = render :partial => 'teams/form'
+      .box-footer
+        %button.btn.btn-primary.pull-right{:type => 'submit'} Create
