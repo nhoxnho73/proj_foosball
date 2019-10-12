@@ -6,34 +6,18 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: 864114
-  host: localhost
-  port: 5432
+
 development:
   <<: *default
   database: foosball_development
-  template: template0
 
 test:
   <<: *default
   database: foosball_test
-#
-# On Heroku and other platform providers, you may have a full connection URL
-# available as an environment variable. For example:
-#
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
-#
-# You can use this database configuration with:
-#
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
+
 production:
   <<: *default
   database: foosball_production
-  username: foosball_user
+  username: foosball
   password: <%= ENV['GSD_DATABASE_PASSWORD'] %>
