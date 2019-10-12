@@ -2,7 +2,7 @@
   / BEGIN SIDEBAR MENU ITEMS
   %ul.menu-items
     %li.m-t-30
-      = link_to :ranking, class: 'detailed' do
+      %a{:href => ranking_path}
         %span.title Dashboard
       %span.bg-success.icon-thumbnail
         %i.pg-home
@@ -14,15 +14,15 @@
           %i.fa-key.fa
         %ul.sub-menu
           %li
-            = link_to :users, class: 'users' do
+            %a{:href => users_path}
               Create Users
             %span.icon-thumbnail 01
           %li
-            = link_to :teams, class: 'teams' do
+            %a{:href => teams_path}
               Create Teams
             %span.icon-thumbnail 02
           %li
-            = link_to :matches, class: 'matches' do
+            %a{:href => matches_path}
               Create Matches
             %span.icon-thumbnail 02
 
