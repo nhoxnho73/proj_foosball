@@ -7,6 +7,7 @@ require 'rspec/rails'
 require "capybara/rspec"
 
 require 'simplecov'
+
 SimpleCov.start do
   add_group 'Models', 'app/models'
   add_group 'API', 'app/api'
@@ -20,6 +21,7 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
@@ -33,3 +35,4 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end

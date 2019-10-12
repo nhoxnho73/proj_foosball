@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       return
     end
 
-    @user.create(users_params)
+    @user = User.create(users_params)
     redirect_to  users_path, notice: 'Successfull !'
   end
 

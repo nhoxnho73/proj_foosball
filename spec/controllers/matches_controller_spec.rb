@@ -16,7 +16,7 @@ RSpec.describe MatchesController, type: :controller do
     expect(response).to have_http_status(200) 
   end
 
-  it "creates new record" do
+  it "creates new" do
     params = {
       team_1_id: team_1.id,
       team_2_id: team_2.id,
@@ -32,7 +32,7 @@ RSpec.describe MatchesController, type: :controller do
     expect(response).to have_http_status(302)
   end
 
-  it "not create new record" do
+  it "not create new" do
     params = {
       team_1_id: nil,
       team_2_id: team_2.id,

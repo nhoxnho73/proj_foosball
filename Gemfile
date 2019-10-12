@@ -74,9 +74,11 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'rails-controller-testing'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

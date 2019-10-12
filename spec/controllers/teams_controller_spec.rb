@@ -13,10 +13,10 @@ RSpec.describe TeamsController, type: :controller do
     expect(response).to have_http_status(200)
   end
 
-  let (:player) { create(:player) }
+  let (:user) { create(:user) }
   it "creates new" do
     params = {
-      user_id: [player.id],
+      user_id: [user.id],
       team: {
         name: 'name'
       }
