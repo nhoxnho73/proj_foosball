@@ -23,6 +23,7 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
   encoding: unicode
   host: ec2-54-83-55-125.compute-1.amazonaws.com
