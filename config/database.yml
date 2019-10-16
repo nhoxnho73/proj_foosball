@@ -7,9 +7,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost
-  username: postgres
-  password: 864114
+  host: ec2-54-83-55-125.compute-1.amazonaws.com
+  username: jljteatxzmdild
+  password: b8e81ffc6607312cefcf63f234f30c1ea3cacfb9c797f3bdfaf02c4b364b3f7c
   port: 5432
   
 
@@ -23,6 +23,10 @@ test:
 
 production:
   <<: *default
-  database: foosball_production
-  username: foosball
-  password: <%= ENV['GSD_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  host: ec2-54-83-55-125.compute-1.amazonaws.com
+  database: df5c2ksqo2v206
+  username: jljteatxzmdild
+  password: b8e81ffc6607312cefcf63f234f30c1ea3cacfb9c797f3bdfaf02c4b364b3f7c
+  port: 5432
