@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     
     def valid_team?
       return true if params[:user][:team_id] == ''
-      return false if params([:user][:team_id]).users.count >=2
+      return false if Team.find(params[:user][:team_id]).users.count >= 2
     end
 
     def users_params
