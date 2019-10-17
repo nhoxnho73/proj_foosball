@@ -3,24 +3,24 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   host: localhost
-#   username: postgres
-#   password: 864114
-#   port: 5432
-
-
 default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: ec2-54-83-55-125.compute-1.amazonaws.com
-  username: jljteatxzmdild
-  password: b8e81ffc6607312cefcf63f234f30c1ea3cacfb9c797f3bdfaf02c4b364b3f7c
+  host: localhost
+  username: postgres
+  password: 864114
   port: 5432
+
+
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   host: ec2-54-83-55-125.compute-1.amazonaws.com
+#   username: jljteatxzmdild
+#   password: b8e81ffc6607312cefcf63f234f30c1ea3cacfb9c797f3bdfaf02c4b364b3f7c
+#   port: 5432
   
 
 development:
